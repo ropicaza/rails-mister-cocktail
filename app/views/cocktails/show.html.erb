@@ -1,14 +1,21 @@
-<h1>Cocktail Ingredients</h1>
-<h2><%= @cocktail.name %></h2>
-<h3>Ingredients</h3>
-<ul>
-  <% @cocktail.doses.each do |dose| %>
-    <li><%= dose.description %> - <%= dose.ingredient.name %>
-    <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
-    </li>
-  <% end %>
-</ul>
+<div class="banner d-flex justify-content-center align-items-center" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(<%= @cocktail.image %>);">
+  <h2><%= @cocktail.name %></h2>
+</div>
 
-<h3>Add Doses</h3>
+<div class="d-flex justify-content-around pt-5 mb-3">
+  <div>
+    <h2>Ingredients</h2>
+      <ul>
+        <% @cocktail.doses.each do |dose| %>
+          <li><%= dose.description %> - <%= dose.ingredient.name %>
+          <%= link_to "Delete", dose_path(dose), method: :delete, data: { confirm: "Are you sure?" } %>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+  <div>
+    <h3>Add Doses</h3>
 
-<%= render 'doses/new' %>
+    <%= render 'doses/new' %>
+  </div>
+</div>
