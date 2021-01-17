@@ -12,6 +12,19 @@
 @import "components/index";
 @import "pages/index";
 
+@import 'select2/dist/css/select2';
+
 body {
-  background-color: rgb(245, 187, 201);
+  background-color: #090909;
+  color: white;
+}
+
+.title {
+  font-size: 100px !important;
+  text-align: center;
+}
+
+a:hover {
+  color: grey;
+  transition: background-color .5s;
 }
