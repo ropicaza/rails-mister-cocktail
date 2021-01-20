@@ -7,15 +7,18 @@
       <% @cocktails.each do |cocktail| %>
         <div class="col-6 col-md-4 col-lg-3 mt-3">
           <div class="card">
-            <img class="card-img-top" src=<%= cocktail.image %> alt="Cocktail image">
+          <% if cocktail.photo.attached? %>
+            <%= cl_image_tag cocktail.photo.key, class: "card-img-top", alt:"Cocktail image" %>
+          <% else %>
+            <img src="https://www.timandorra.com/wp-content/uploads/2016/11/Imagen-no-disponible.png" alt="cocktail image">
+          <% end %>
               <div class="card-body bg-light">
               <h3 class="card-title"><strong><%= link_to cocktail.name, cocktail_path(cocktail) %></strong></h3>
+              <p><%= link_to  "Delete", cocktail_path(cocktail), method: :delete, data: { confirm: "Are you sure?" } %></p>
               </div>
           </div>
         </div>
       <% end %>
-
-  
     </div>
   </div>
   <ul>
