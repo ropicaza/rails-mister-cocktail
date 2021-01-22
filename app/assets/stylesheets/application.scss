@@ -12,7 +12,6 @@
 @import "components/index";
 @import "pages/index";
 
-@import 'select2/dist/css/select2';
 
 body {
   background-color: #090909;
@@ -27,4 +26,9 @@ body {
 a:hover {
   color: grey;
   transition: background-color .5s;
+}
+
+.select2 {
+  background-color: #5897fb !important;
+  color: black !important;
 }
